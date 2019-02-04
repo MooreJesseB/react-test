@@ -1,0 +1,19 @@
+.open-button {
+  height: 50px;
+  width: 150px;
+  border: solid 1px white;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.open-button:hover {
+  cursor: pointer;
+}
+
+.count {
+    color: white;
+}

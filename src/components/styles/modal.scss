@@ -1,0 +1,109 @@
+$blueish: #74c4db;
+$magenta: #ca4d98;
+$background-grey: #525571;
+$highlight-grey: #696C89;
+
+@keyframes scaleInX {
+  0% {
+    transform: scale(0);
+    transform-origin: left;
+  }
+  100% {
+    transform: scale(1);
+    transform-origin: left;
+  }
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+
+  .modal-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .modal-main {
+      position: fixed;
+      margin: 0 auto;
+      width: 60%;
+      height: 80%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      background-color: $background-grey;
+      border: 1px solid lightgrey;
+
+      .modal-tabs {
+        width: 20%;
+        height: 100%;
+        border-right: solid 1px white;
+
+        .tab-list {
+          margin: 0;
+          width: 100%;
+          padding: 0;
+          overflow: scroll;
+
+          .tab-body {
+            padding-bottom: 0;
+            background-color: #525571;
+            color: white;
+          }
+
+          .tab-body:focus{
+            background-color: $highlight-grey;
+            outline: 0;
+          }
+
+          .divider {
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(45deg, $blueish, $magenta);
+            animation: 0.3s cubic-bezier(0, 0, 0.3, 1) 0s 1 scaleInX;
+          }
+        }
+      }
+
+      .modal-body {
+        width: 80%;
+        height: 100%;
+        background-color: $background-grey;
+
+        .body-textarea {
+          width: calc(100% - 6px);
+          height: calc(100% - 6px);
+          background-color: $background-grey;
+          color: white;
+        }
+
+        .body-textarea:focus {
+          background-color: $highlight-grey;
+          outline: 0;
+        }
+      }
+
+      .new-tab {
+        height: 34px;
+        width: 100%;
+        border-bottom: solid 2px lightgrey;
+        color: lightgrey;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .new-tab:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
